@@ -1,0 +1,80 @@
+<ion-header no-border>
+  <div class="login-header ion-padding">
+    <img class="logo-img" src="./assets/img/talent.png" id="prfoileimg1">
+    <div login-page-text-div>
+      <h2 login-page-text>{{ 'Login.quote' | translate}} <ion-icon name="star"></ion-icon></h2>
+    </div>
+  </div>
+</ion-header>
+<ion-content>
+  <div>
+    <ion-buttons slot="end" style="padding-top:10px">
+      <ion-button (click)="openLanguagePopOver($event)" style="color: black;">
+        <img [src]="languageService.selectedLang.img" height="30px" style="padding-right:5px" slot="start"
+          alt="flag">{{languageService.selectedLang.text}}
+        <!-- <ion-icon name="ellipsis-vertical-outline"></ion-icon> -->
+      </ion-button>
+    </ion-buttons>
+    <div heading-column-lr>
+      <h1 big-heading>{{ 'Login.loginSmall' | translate}}</h1>
+      <h2 small-heading (click)="OpenRegistrationForm()">{{ 'Login.register' | translate}}</h2>
+    </div>
+    <form [formGroup]="loginform">
+      <div class="formtext">
+        <ion-row>
+          <ion-col>
+            <ion-item lines="none" class="roundedInput">
+              <ion-input type="text" placeholder="{{ 'Login.talentId' | translate}}" formControlName="empId"
+                [(ngModel)]="empIdVal"></ion-input>
+              <div class="loginimg">
+                <ion-icon name="person-outline" class="loginicos"></ion-icon>
+              </div>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <div *ngIf="loginform.controls.empId.hasError('required') && loginform.controls.empId.touched || loginform.controls. empId.hasError('pattern')">
+          <small style="color: #f70505;" class="errsmall">{{ 'Login.talent_id_alert' | translate}}</small>
+        </div>
+
+        <ion-row>
+          <ion-col>
+            <ion-item lines="none" class="roundedInput">
+              <ion-input formControlName="password" placeholder="{{ 'Login.password' | translate}}" [type]="passwordType" [(ngModel)]="pwdVal"
+                clearOnEdit="false">
+              </ion-input>
+              <ion-icon class="ion-text-end" style="color: #173352!important;" [name]="passwordIcon" class="passwordIcon" (click)='hideShowPassword()'>
+              </ion-icon>
+              <div class="loginimg">
+                <ion-icon name="lock-closed-outline" class="loginicos"></ion-icon>
+              </div>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <div *ngIf="loginform.controls.password.hasError('required') && loginform.controls.password.touched">
+          <small style="color: #f70505;" class="errsmall">{{ 'Login.pass_alert' | translate}}</small>
+        </div>
+
+
+        <ion-row>
+          <ion-col style="text-align: center;" class="ion-margin-top">
+            <ion-button login-page-text class="loginbtnV2" (click)="login_click()" shape="round"
+              style="width:270px;color: black;font-size: medium;font-weight: bold;">{{ 'Login.login' | translate}}
+            </ion-button>
+          </ion-col>
+        </ion-row>
+
+        <div class="ion-text-center">
+          <p class="regforgot" fill="outline" style="font-size:13px" (click)="OpenRegistrationForm()">{{ 'Login.dnt_acc' | translate}}
+            <span style="color:orange;font-weight:bold">{{ 'Login.registerSmall' | translate}}</span>
+          </p>
+        </div>
+
+        <div class="ion-text-center">
+          <p class="regforgot" fill="outline" style="font-size:13px" (click)="openforgot()">{{ 'Login.frg_pass' | translate}}
+          </p>
+        </div>
+
+      </div>
+    </form>
+  </div>
+</ion-content>

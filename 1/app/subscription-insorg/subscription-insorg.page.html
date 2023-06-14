@@ -1,0 +1,139 @@
+<ion-header>
+  <ion-toolbar class="new-background-color">
+    <ion-buttons slot="start">
+      <ion-back-button class="blackTheme" defaultHref="dashboard-individual"></ion-back-button>
+    </ion-buttons>
+    <ion-row>
+      <ion-col size="10">
+        <ion-title class="ion-text-wrap">{{'Subscription.subscription' | translate}}</ion-title>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card id="card1">
+    <ion-card-header>
+      <ion-item class="formitem itemborderNoBottom" lines="none">
+        <ion-label class="blackTheme">{{'Subscription.cury' | translate}}</ion-label>
+        <ion-select class="blackTheme" [(value)]="currencyVal" (ionChange)="CurrencyChangeEvent($event)">
+          <ion-select-option value="INR">{{'Subscription.inr' | translate}}</ion-select-option>
+          <ion-select-option value="USD">{{'Subscription.usd' | translate}}</ion-select-option>
+          <ion-select-option value="AED">{{'Subscription.aed' | translate}}</ion-select-option>
+          <ion-select-option value="MYR">{{'Subscription.myr' | translate}}</ion-select-option>
+          <ion-select-option value="SGD">{{'Subscription.sgd' | translate}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-card id="card1">
+    <ion-card-header style="text-align: center;">
+      <ion-card-title>
+        <h1 class="blackTheme">{{'Subscription.profess' | translate}}</h1>
+      </ion-card-title>
+      <ion-card-subtitle class="blackTheme">
+        <h1><sup>{{currencySymbolVal}}</sup> {{amtProfessionalVal}} </h1>
+      </ion-card-subtitle>
+      <ion-button shape="round" class="subscriptionBtn" (click)="payWithRazor('Professional')">
+        {{'Subscription.getsta' | translate}}
+      </ion-button>
+    </ion-card-header>
+    <ion-card-content style="padding-left: 10%;padding-top:10px">
+      <h2>{{'Subscription.planDet' | translate}}</h2>
+      <p>
+        <ion-icon style="color: green;" name="checkmark-circle-outline"></ion-icon> {{'Subscription.twoTalCre' | translate}}
+      </p>
+      <p>
+        <ion-icon style="color: green;" name="checkmark-circle-outline"></ion-icon> {{'Subscription.twoProfAcc' | translate}}
+      </p>
+      <p>
+        <ion-icon style="color: green;" name="checkmark-circle-outline"></ion-icon> {{'Subscription.unlimRef' | translate}}
+      </p>
+      <p>
+        <ion-icon style="color: green;" name="checkmark-circle-outline"></ion-icon> {{'Subscription.unlimRefen' | translate}}
+      </p>
+      <p>
+        <ion-icon style="color: green;" name="checkmark-circle-outline"></ion-icon> {{'Subscription.oneYrSub' | translate}}
+      </p>
+      <p>
+        <ion-icon style="color: green;" name="checkmark-circle-outline"></ion-icon> {{'Subscription.fiveDocSto' | translate}}
+      </p>
+
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card id="card1">
+    <ion-card-header style="text-align: center;">
+      <ion-card-title>
+        <h1 class="blackTheme">{{'Subscription.entpri' | translate}}</h1>
+      </ion-card-title>
+      <ion-card-subtitle class="blackTheme">
+        <h1><sup>{{currencySymbolVal}}</sup> {{amtEnterpriseVal}} </h1>
+      </ion-card-subtitle>
+      <ion-button shape="round" class="subscriptionBtn" (click)="payWithRazor('Enterprise')">
+        {{'Subscription.getsta' | translate}}
+      </ion-button>
+    </ion-card-header>
+    <ion-card-content style="padding-left: 10%;padding-top:10px">
+      <h2>{{'Subscription.planDet' | translate}}</h2>
+      <p>
+        <ion-icon style="color: green;" name="checkmark-circle-outline"></ion-icon> {{'Subscription.fourTalCre' | translate}}
+      </p>
+      <p>
+        <ion-icon style="color: green;" name="checkmark-circle-outline"></ion-icon> {{'Subscription.fiveProAcc' | translate}}
+      </p>
+      <p>
+        <ion-icon style="color: green;" name="checkmark-circle-outline"></ion-icon> {{'Subscription.fiveProAcc' | translate}}
+      </p>
+      <p>
+        <ion-icon style="color: green;" name="checkmark-circle-outline"></ion-icon> {{'Subscription.fiveProAcc' | translate}}
+      </p>
+      <p>
+        <ion-icon style="color: green;" name="checkmark-circle-outline"></ion-icon> {{'Subscription.oneYrSub' | translate}}
+      </p>
+      <p>
+        <ion-icon style="color: green;" name="checkmark-circle-outline"></ion-icon> {{'Subscription.oneDocStog' | translate}}
+      </p>
+
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card id="card1">
+    <ion-card-header style="text-align: center;">
+      <ion-card-title>
+        <h1 class="blackTheme">{{'Subscription.ultimate' | translate}}</h1>
+      </ion-card-title>
+      <ion-card-subtitle class="blackTheme">
+        <h1><sup>{{currencySymbolVal}}</sup> {{amtUltimateVal}} </h1>
+      </ion-card-subtitle>
+      <ion-button shape="round" class="subscriptionBtn" (click)="payWithRazor('Ultimate')">
+        {{'Subscription.getsta' | translate}}
+      </ion-button>
+    </ion-card-header>
+    <ion-card-content style="padding-left: 10%;padding-top:10px">
+      <h2>{{'Subscription.planDet' | translate}}</h2>
+      <p>
+        <ion-icon style="color: green;" name="checkmark-circle-outline"></ion-icon> {{'Subscription.unliTalCre' | translate}}
+      </p>
+      <p>
+        <ion-icon style="color: green;" name="checkmark-circle-outline"></ion-icon> {{'Subscription.unliProAcc' | translate}}
+      </p>
+      <p>
+        <ion-icon style="color: green;" name="checkmark-circle-outline"></ion-icon> {{'Subscription.unlimRef' | translate}}
+      </p>
+      <p>
+        <ion-icon style="color: green;" name="checkmark-circle-outline"></ion-icon> {{'Subscription.unlimRefen' | translate}}
+      </p>
+      <p>
+        <ion-icon style="color: green;" name="checkmark-circle-outline"></ion-icon> {{'Subscription.oneYrSub' | translate}}
+      </p>
+      <p>
+        <ion-icon style="color: green;" name="checkmark-circle-outline"></ion-icon> {{'Subscription.tengbDoc' | translate}}
+      </p>
+
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

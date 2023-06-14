@@ -1,0 +1,77 @@
+<ion-header>
+  <ion-toolbar class="new-background-color">
+    <ion-row id="ediitbor">
+      <ion-col size="8">
+        <div class="ion-text-start">
+          <p class="bluec">{{'Consent.header' | translate}}</p>
+        </div>
+      </ion-col>
+      <ion-col size="4">
+        <div class="ion-text-end">
+          <p (click)="closeModal()">
+            <ion-icon name="close" class="closeicons"></ion-icon>
+          </p>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="talentcard1">
+    <ion-card-content>
+      <div>
+        <P style="font-weight: bold;">{{'Consent.paraHeader' | translate}}</P>
+        <br/>
+        <P>
+          {{'Consent.para1' | translate}}
+        </P>
+        <br/>
+        <P>
+          {{'Consent.para2' | translate}}
+        </P>
+        <br/>
+        <P>
+          {{'Consent.para3' | translate}}
+        </P>
+        <br/>
+        <P>
+          {{'Consent.para4' | translate}}
+        </P>
+        <br/>
+        <P>
+          {{'Consent.para5' | translate}}
+        </P>
+        <br/>
+        <P>
+          {{'Consent.para6' | translate}}
+        </P>
+        <br/>
+        <P>
+          {{'Consent.para7' | translate}}
+        </P>
+        <br/>
+        <P>
+          {{'Consent.para8' | translate}}
+        </P>
+        <br/>
+        <P>
+          {{'Consent.para9' | translate}}
+        </P>
+        <br/>
+
+        <!-- Agree/Disagree button -->
+        <ion-row>
+            <ion-button type="submit" shape="round" class="ioncardButtonNormal" (click)="AgreeAndCloseModal()">
+              <ion-icon slot="start" name="cloud-done"></ion-icon>{{'Consent.agree' | translate}}
+            </ion-button>
+            <ion-button shape="round" class="ioncardButtonNormal" (click)="DisAgreeAndCloseModal()">
+              <ion-icon slot="start" name="close-circle"></ion-icon>{{'Consent.disAgree' | translate}}
+            </ion-button>
+        </ion-row>
+
+      </div>
+    </ion-card-content>
+  </ion-card>
+  
+</ion-content>
